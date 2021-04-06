@@ -5,18 +5,18 @@ body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
+  min-height: 100%;
 }
 
 *,
 *::before,
 *::after {
-  color: inherit;
+  box-sizing: inherit;
 }
 
 body {
   display: grid;
   grid-template-rows: max-content 1fr max-content;
-  min-height: 100%;
 }
 
 .beyond-nav {
@@ -67,18 +67,13 @@ body {
   color: #5e8be0;
 }
 
-.markdown-body {
-  padding: 1em;
-}
-
 /* Markdown wrapper taken from github-markdown-css docs by @sindresorhus */
 .markdown-body {
-  box-sizing: border-box;
   min-width: 200px;
-  width: 100%;
   max-width: 980px;
   margin: 0 auto;
   padding: 45px;
+  width: 100%;
 }
 
 @media (max-width: 767px) {
