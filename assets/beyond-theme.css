@@ -20,7 +20,8 @@ body {
 }
 
 .beyond-nav {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   gap: 1em;
   grid-template-columns: auto 1fr;
 
@@ -34,10 +35,9 @@ body {
   font-size: 1.5em;
 }
 .beyond-nav > ul {
-  display: grid;
-  grid-auto-columns: max-content;
+  display: flex;
+  flex-wrap: wrap;
   gap: 1em;
-  grid-auto-flow: column;
   list-style: none;
   margin: 0;
   padding: 0;
