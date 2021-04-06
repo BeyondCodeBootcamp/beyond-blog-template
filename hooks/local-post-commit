@@ -1,0 +1,5 @@
+#!/bin/bash
+set -e
+set -u
+
+bash ./scripts/local-deploy.sh

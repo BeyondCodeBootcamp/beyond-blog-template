@@ -1,0 +1,28 @@
+#!/bin/bash
+set -e
+set -u
+
+# add .local/bin to PATH - because some distros are
+# behind the times and don't include it by default
+export PATH="${HOME}/.local/bin:${HOME}/bin:${PATH}"
+
+# TODO use a different hook that gets ref_name and such
+# clone the repository to a temporary location
+my_work_tree="$(mktemp -d -t git-work-tree.XXXXXXXX)" 2>/dev/null
+git clone ./ "${my_work_tree}"
+
+# a nice little subshell to work in
+(
+	# unset GIT_* vars as to not let the parent
+	# git process interfere with our build task
+	# unset GIT_DIR GIT_EXEC_PATH GIT_PUSH_OPTION_COUNT
+	# unset "$(compgen -v 'GIT_')"
+	unset "${!GIT_@}"
+
+	cd "${my_work_tree}"
+	bash ./scripts/server-deploy.sh
+)
+
+# cleanup, cleanup, everybody everywhere
+# cleanup, cleanup, every shell must do its share
+rm -rf "${my_work_tree}"
