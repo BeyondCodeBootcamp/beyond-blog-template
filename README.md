@@ -29,6 +29,8 @@ Example:
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Beyond Code Styles -->
     <link rel="stylesheet" href="/assets/github-markdown.css" />
     <link rel="stylesheet" href="/assets/beyond-theme.css" />
