@@ -86,6 +86,16 @@ Create a `<footer class="beyond-footer">` and all elements inside of it will be 
 </footer>
 ```
 
+# How to Build a Beyond Markdown Blog
+
+```bash
+curl -sS https://webinstall.dev | bash
+
+webi sd comrak
+
+bash build.sh
+```
+
 # Credit
 
 - @sindresorhus for [github-markdown.css](https://github.com/sindresorhus/github-markdown-css) (MIT License)
